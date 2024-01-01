@@ -1,15 +1,16 @@
 <div class="post-header">
 	<div class="meta">
 		<div class="date">
-			<span class="day">{{ dateFormat "02" .Date }}</span>
-			<span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+			<!--<span class="rest">{{ dateFormat "02" .Date }}-{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }}-{{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>-->
+			<span class="rest">{{ dateFormat "02-01-06" .Date }}</span>
+			<!--<span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>-->
 		</div>
 	</div>
 	<div class="matter">
 		<h4 class="title small">
 			<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
 		</h4>
-		<span class="description">
+		<!--<span class="description">
 			{{ if isset .Params "description" }}
 				{{ .Description }}
 			{{ else if gt (countrunes (.Content | plainify)) 120 }}
@@ -17,6 +18,6 @@
 			{{ else }}
 				{{ .Content | plainify | safeHTML }}
 			{{ end }}
-		</span>
+		</span>-->
 	</div>
 </div>
